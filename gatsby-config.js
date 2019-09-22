@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `nobiot.kitchen`,
+    author: `Noboru Ota`,
+    description: `Everyday Recipes and Food Stories for Geeky Professionals Busy with Work & Life`,
+    siteUrl: `https://nobiot.com`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `_nobiot`,
     },
   },
   plugins: [
@@ -30,7 +30,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 1680,
             },
           },
           {
