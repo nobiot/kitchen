@@ -1,21 +1,19 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import {  graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
 import Img from "gatsby-image"
-const Markdown = require("markdown").markdown
+const Md = require("markdown-it")().use(require("markdown-it-footnote"))
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
     let featuredImgFluid = post.frontmatter.featured_image.childImageSharp.fluid
-    let tag = post.frontmatter.tag
+
     let ingredients = post.frontmatter.recipe.ingredients
     let instructions = post.frontmatter.recipe.instructions
 
@@ -47,10 +45,10 @@ class BlogPostTemplate extends React.Component {
             </p>
           </header>
           <h2>Ingredients</h2>
-          <section dangerouslySetInnerHTML={{ __html: Markdown.toHTML(ingredients) }} />
+          <section dangerouslySetInnerHTML={{ __html: Md.render(ingredients) }} />
 
           <h2>Steps</h2>
-          <section dangerouslySetInnerHTML={{ __html: Markdown.toHTML(instructions) }} />
+          <section dangerouslySetInnerHTML={{ __html: Md.render(instructions) }} />
 
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
@@ -59,36 +57,10 @@ class BlogPostTemplate extends React.Component {
             }}
           />
           <footer>
-            <Bio />
+            
           </footer>
         </article>
 
-        <nav>
-          <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0,
-            }}
-          >
-            <li>
-              {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
-                </Link>
-              )}
-            </li>
-          </ul>
-        </nav>
       </Layout>
     )
   }
@@ -111,7 +83,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        description
         recipe {
           ingredients
           instructions

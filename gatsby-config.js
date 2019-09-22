@@ -57,13 +57,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `recipes by nobiot.kitchen`,
+        short_name: `recipes`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        theme_color: `#000000`,
+        display: `recipe`,
+        icon: `content/assets/icon-120x120.png`,
       },
     },
     `gatsby-plugin-offline`,

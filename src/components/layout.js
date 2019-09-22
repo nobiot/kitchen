@@ -62,10 +62,8 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <footer >
+          © {new Date().getFullYear()}, <a style={{ boxShadow: `none`}} href="https://www.instagram.com/nobiot.kitchen/" target="_blank" rel="noopener noreferrer">nobiot.kitchen</a>
         </footer>
       </div>
     )
