@@ -6,11 +6,18 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
+import Img from "gatsby-image"
+const Markdown = require("markdown").markdown
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    let featuredImgFluid = post.frontmatter.featured_image.childImageSharp.fluid
+    let tag = post.frontmatter.tag
+    let ingredients = post.frontmatter.recipe.ingredients
+    let instructions = post.frontmatter.recipe.instructions
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -19,6 +26,7 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         <article>
+          <Img fluid={featuredImgFluid} />
           <header>
             <h1
               style={{
@@ -38,6 +46,12 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.date}
             </p>
           </header>
+          <h2>Ingredients</h2>
+          <section dangerouslySetInnerHTML={{ __html: Markdown.toHTML(ingredients) }} />
+
+          <h2>Steps</h2>
+          <section dangerouslySetInnerHTML={{ __html: Markdown.toHTML(instructions) }} />
+
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{
@@ -98,6 +112,17 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        recipe {
+          ingredients
+          instructions
+        }
+        featured_image {
+          childImageSharp {
+            fluid(maxWidth: 1680) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
