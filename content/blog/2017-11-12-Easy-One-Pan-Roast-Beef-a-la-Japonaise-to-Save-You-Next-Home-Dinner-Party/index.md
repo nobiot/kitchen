@@ -11,7 +11,7 @@ recipe:
   cook: 5-10 minutes (+ 1 hour to be left in the pan)
   
   ingredients: |
-    * 500 grams chunk of beef (I used [eye fillet in Australia = beef tenderloin in US = filet in France = fillet in UK & South Africa](https://en.m.wikipedia.org/wiki/Beef_tenderloin))
+    * 500 grams chunk of beef [1](#fn-1)
     * 1–2 cloves garlic
     * 3–4 cm3 ginger
     * 200 cc water
@@ -31,5 +31,7 @@ recipe:
 ## Notes ##
 If you don’t have a lid for your pan (I didn’t), then you can use a sheet of aluminum foil as a lid. If your pan is shallow, turn the meat from time to time.
 
-This recipe is originally from [cookpad](https://cookpad.com/recipe/1145363){:target=“_blank”}. A good friend of mine in Melbourne, Kanako, found the recipe for a home dinner party we organised. It was a huge success with a minimal effort on our part. Since then I cooked this with other friends twice; very easy and reliable. 
+This recipe is originally from [cookpad](https://cookpad.com/recipe/1145363). A good friend of mine in Melbourne, Kanako, found the recipe for a home dinner party we organised. It was a huge success with a minimal effort on our part. Since then I cooked this with other friends twice; very easy and reliable. 
+
+[^1]: I used [eye fillet in Australia = beef tenderloin in US = filet in France = fillet in UK & South Africa](https://en.m.wikipedia.org/wiki/Beef_tenderloin)
 

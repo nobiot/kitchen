@@ -22,8 +22,8 @@ recipe:
     2. Salt both sides. Black pepper on one side only.
     3. Coat pork with flour. Remove excess.
     4. Whisk egg well. Coat pork. Remove excess.
-    5.  Coat pork with panko breadcrumbs. 
-    6.  Heat up the oil in the saucepan to 180°C. This will go down to around 170°C when you put the pork in. Try to keep 165-170°C over medium heat.
+    5. Coat pork with panko breadcrumbs. 
+    6. Heat up the oil in the saucepan to 180°C. This will go down to around 170°C when you put the pork in. Try to keep 165-170°C over medium heat.
 
 ---
 
