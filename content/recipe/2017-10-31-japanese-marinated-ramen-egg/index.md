@@ -1,5 +1,5 @@
 ---
-date: "2017-10-31"
+date: 2017-10-31
 title: Easy Japanese Marinated Ramen Egg (Ajituke Tamago = Aji-Tama)
 category: recipe
 tag: Japanese, favourite, easy, vegetarian

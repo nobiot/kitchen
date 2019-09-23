@@ -62,8 +62,9 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main>{children}</main>
-        <footer >
-          © {new Date().getFullYear()}, <a style={{ boxShadow: `none`}} href="https://www.instagram.com/nobiot.kitchen/" target="_blank" rel="noopener noreferrer">nobiot.kitchen</a>
+        <footer style={{fontSize: rhythm(0.5)}}>
+          <p>Everyday recipes and food stories for geeky professionals busy with work & life</p>
+          <p>© {new Date().getFullYear()}, <a style={{ boxShadow: `none`}} href="https://www.instagram.com/nobiot.kitchen/" target="_blank" rel="noopener noreferrer">nobiot.kitchen</a></p>
         </footer>
       </div>
     )
