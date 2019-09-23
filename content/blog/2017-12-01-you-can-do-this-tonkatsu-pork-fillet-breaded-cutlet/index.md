@@ -12,7 +12,7 @@ recipe:
   
   ingredients:  |
     * 150-250 grams pork fillet
-    * Some panko breadcrumbs (enough to cost the pork. I used German one)
+    * Some panko breadcrumbs (enough to coat the pork. I used German one)
     * 1 egg (I didn’t know how to have only half of an egg, so I used 1 egg...)
     * 1-1.5 tbsp flour
     * salad oil for 2-3cm in the saucepan to be used for frying

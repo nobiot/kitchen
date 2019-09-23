@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import Img from "gatsby-image"
 
 class BlogIndex extends React.Component {
   render() {
@@ -18,17 +19,22 @@ class BlogIndex extends React.Component {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <article key={node.fields.slug}>
-              <header>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
-                  <Link style={{ boxShadow: `none`, color:'hsla(0,0%,0%,0.9)' }} to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
+              <header style={{ display: `flex`}}>
+                <Img fixed={node.frontmatter.featured_image.childImageSharp.fixed}/>
+                <div style={{flex: 1, marginLeft: rhythm(1 / 4)}}>
+                  <h1
+                    style={{
+                      fontSize: rhythm(3 / 4),
+                      marginTop: 0,
+                      marginBottom: rhythm(1 / 4)
+                    }}
+                  >
+                    <Link style={{ boxShadow: `none`, color:'hsla(0,0%,0%,0.9)' }} to={node.fields.slug}>
+                      {title}
+                    </Link>
+                  </h1>
+                  <small>{node.frontmatter.date}</small>
+                </div>
               </header>
               <section>
                 <p
@@ -63,6 +69,13 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            featured_image {
+              childImageSharp {
+                fixed(width: 150, height: 150) {
+                  ...GatsbyImageSharpFixed_withWebp_tracedSVG
+                }
+              }
+            }
           }
         }
       }
