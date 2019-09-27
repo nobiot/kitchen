@@ -35,10 +35,10 @@ recipe:
     5. Pour oil into a frying pan. 3-5mm. Heat it to 170 degrees Celsius 
     
     6. Fry the mixture for 5-6 minutes
-    
-    ![finished kakiage-tempura vegetable fritter](./kakiage.jpg)
 
 ---
+
+![finished kakiage-tempura vegetable fritter](./kakiage.jpg)
 
 ## Notes ##
 
