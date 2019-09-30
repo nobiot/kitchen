@@ -17,26 +17,27 @@ recipe:
     * 300-400ml sunflower oil for frying 
     * salt
 
-  instructions: | 
-    1. Slice onions (julienne) and carrots (matchstick) [1](#fn-1)
-    
-    2. Drain the corns, put them in a bowl, and add sliced onions and carrots. Add about a table spoonful of flour and mix well.
-    
-    ![Carrots, onions, and corns in a bowl](./veges.jpg)
-    
-    3. In another bowl, put flour, oil, and water.
-    
-    ![Mixture of flour, oil, and water in a bowl](./mix.jpg)
-    
-    4. In a soup plate, put one-serve worth of vegetables mix; scoop the flour mix in. Coat the vegetables with the flour mix 
-    
-    ![Vegetables and flour mix all together before frying](./beforeFrying.jpg)
-    
-    5. Pour oil into a frying pan. 3-5mm. Heat it to 170 degrees Celsius 
-    
-    6. Fry the mixture for 5-6 minutes
-
 ---
+
+## Steps ##
+
+1. Slice onions (julienne) and carrots (matchstick) [1](#fn-1)
+
+2. Drain the corns, put them in a bowl, and add sliced onions and carrots. Add about a table spoonful of flour and mix well.
+
+![Carrots, onions, and corns in a bowl](./veges.jpg)
+
+3. In another bowl, put flour, oil, and water.
+
+![Mixture of flour, oil, and water in a bowl](./mix.jpg)
+
+4. In a soup plate, put one-serve worth of vegetables mix; scoop the flour mix in. Coat the vegetables with the flour mix 
+
+![Vegetables and flour mix all together before frying](./beforeFrying.jpg)
+
+5. Pour oil into a frying pan. 3-5mm. Heat it to 170 degrees Celsius 
+
+6. Fry the mixture for 5-6 minutes
 
 ![finished kakiage-tempura vegetable fritter](./kakiage.jpg)
 
