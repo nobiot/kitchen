@@ -17,7 +17,14 @@ class BlogPostTemplate extends React.Component {
 
     let ingredients = post.frontmatter.recipe.ingredients
     let instructions = post.frontmatter.recipe.instructions
+    let html
 
+    if (instructions) {
+      html = `<h2>Steps</h2>` + Md.render(instructions) + post.html
+    } else {
+      html = post.html
+    }
+  
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -47,19 +54,12 @@ class BlogPostTemplate extends React.Component {
           </header>
           <h2>Ingredients</h2>
           <section dangerouslySetInnerHTML={{ __html: Md.render(ingredients) }} />
-
-          <h2>Steps</h2>
-          <section dangerouslySetInnerHTML={{ __html: Md.render(instructions) }} />
-
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <section dangerouslySetInnerHTML={{ __html: html }} />
           <hr
             style={{
               marginBottom: rhythm(1),
             }}
           />
-          <footer>
-            
-          </footer>
         </article>
 
       </Layout>
