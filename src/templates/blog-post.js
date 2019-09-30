@@ -1,13 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import './footnote.css'
-
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
-
 import Img from 'gatsby-image'
-const Md = require('markdown-it')().use(require('markdown-it-footnote'))
 
 export default ({ location, data }) => {
   const post = data.markdownRemark
@@ -15,9 +12,15 @@ export default ({ location, data }) => {
   const featuredImgFluid = post.frontmatter.featured_image.childImageSharp.fluid
   const ingredients = post.frontmatter.recipe.ingredients
   const instructions = post.frontmatter.recipe.instructions
-  const html = instructions
-    ? `<h2>Steps</h2>` + Md.render(instructions) + post.html
-    : post.html
+
+  const Md = require('markdown-it')().use(require('markdown-it-footnote'))
+  const buildIngredientsHTML = (ingredients) => ingredients ? `<h2>Ingredients</h2>` + Md.render(ingredients) : '' // return empty string
+  const buildInstructionsHTML = (instructions) => instructions ? `<h2>Steps</h2>` + Md.render(instructions) : '' // return empty string
+
+  const html =
+    buildIngredientsHTML(ingredients) +
+    buildInstructionsHTML(instructions) +
+    post.html
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -46,9 +49,9 @@ export default ({ location, data }) => {
             {post.frontmatter.date}
           </p>
         </header>
-        <h2>Ingredients</h2>
-        <section dangerouslySetInnerHTML={{ __html: Md.render(ingredients) }} />
-        <section dangerouslySetInnerHTML={{ __html: html }} />
+        <main>
+          <section dangerouslySetInnerHTML={{ __html: html }} />
+        </main>
         <hr
           style={{
             marginBottom: rhythm(1)
