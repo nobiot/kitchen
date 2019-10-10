@@ -5,23 +5,30 @@ module.exports = {
     description: `Everyday Recipes and Food Stories for Geeky Professionals Busy with Work & Life`,
     siteUrl: `https://nobiot.com`,
     social: {
-      twitter: `_nobiot`,
-    },
+      twitter: `_nobiot`
+    }
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/recipe`,
-        name: `recipe`,
-      },
+        name: `recipe`
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
+        name: `assets`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/scrapbook`,
+        name: `scrapbook`
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -30,35 +37,35 @@ module.exports = {
           {
             resolve: `gatsby-remark-external-links`,
             options: {
-              target: "_blank",
-              rel: "nofollow"
+              target: '_blank',
+              rel: 'nofollow'
             }
           },
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1680,
-            },
+              maxWidth: 1680
+            }
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-        ],
-      },
+          `gatsby-remark-smartypants`
+        ]
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-109049728-1`,
-      },
+        trackingId: `UA-109049728-1`
+      }
     },
     `gatsby-plugin-feed`,
     {
@@ -70,16 +77,16 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#000000`,
         display: `recipe`,
-        icon: `content/assets/icon-120x120.png`,
-      },
+        icon: `content/assets/icon-120x120.png`
+      }
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-  ],
+        pathToConfigModule: `src/utils/typography`
+      }
+    }
+  ]
 }

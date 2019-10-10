@@ -8,7 +8,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === `MarkdownRemark`) {
     const relatievFilePath = createFilePath({ node, getNode })
     const bodyOfFilePath = relatievFilePath.slice(12)
-    const date = moment(node.frontmatter.date).format("YYYY-MM-DD")
+    const date = moment(node.frontmatter.date).format('YYYY-MM-DD')
     const yyyy = date.slice(0, 4)
     const mm = date.slice(5, 7)
     const dd = date.slice(8, 10)
@@ -16,7 +16,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: `/recipe/${yyyy}/${mm}/${dd}/${bodyOfFilePath}`,
+      value: `/recipe/${yyyy}/${mm}/${dd}/${bodyOfFilePath}`
     })
   }
 }
@@ -58,13 +58,13 @@ exports.createPages = async ({ graphql, actions }) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
     createPage({
-      path:  post.node.fields.slug,
+      path: post.node.fields.slug,
       component: blogPost,
       context: {
         slug: post.node.fields.slug,
         previous,
-        next,
-      },
+        next
+      }
     })
   })
 }
