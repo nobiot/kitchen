@@ -6,54 +6,49 @@ import SEO from '../components/seo'
 import { rhythm } from '../utils/typography'
 import Img from 'gatsby-image'
 
-class BlogIndex extends React.Component {
-  render () {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+export default ({ location, data }) => {
+  const posts = data.allMarkdownRemark.edges
+  console.log(posts)
 
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO title='All recipes' />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <Link to={node.fields.slug}>
-              <article key={node.fields.slug}>
-                <header style={{ display: `flex` }}>
-                  <Img fixed={node.frontmatter.featured_image.childImageSharp.fixed} />
-                  <div style={{ flex: 1, marginLeft: rhythm(1 / 4) }}>
-                    <h1
-                      style={{
-                        fontSize: rhythm(3 / 4),
-                        marginTop: 0,
-                        marginBottom: rhythm(1 / 4)
-                      }}
-                    >
-                      <Link style={{ boxShadow: `none`, color: 'hsla(0,0%,0%,0.9)' }} to={node.fields.slug}>
-                        {title}
-                      </Link>
-                    </h1>
-                    <small style={{ color: 'hsla(0,0%,0%,0.9)' }}>{node.frontmatter.date}</small>
-                  </div>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: node.frontmatter.description || ``
+  return (
+    <Layout location={location} title={data.site.siteMetadata.title}>
+      <SEO title='All recipes' />
+      {posts.map(({ node }) => {
+        const title = node.frontmatter.title || node.fields.slug
+        return (
+          <Link to={node.fields.slug}>
+            <article key={node.fields.slug}>
+              <header style={{ display: `flex` }}>
+                <Img fixed={node.frontmatter.featured_image.childImageSharp.fixed} />
+                <div style={{ flex: 1, marginLeft: rhythm(1 / 4) }}>
+                  <h1
+                    style={{
+                      fontSize: rhythm(3 / 4),
+                      marginTop: 0,
+                      marginBottom: rhythm(1 / 4)
                     }}
-                  />
-                </section>
-              </article>
-            </Link>
-          )
-        })}
-      </Layout>
-    )
-  }
+                  >
+                    <Link style={{ boxShadow: `none`, color: 'hsla(212,56%,16%,1)' }} to={node.fields.slug}>
+                      {title}
+                    </Link>
+                  </h1>
+                  <small style={{ color: 'hsla(0,0%,0%,0.9)' }}>{node.frontmatter.date}</small>
+                </div>
+              </header>
+              <section>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || ``
+                  }}
+                />
+              </section>
+            </article>
+          </Link>
+        )
+      })}
+    </Layout>
+  )
 }
-
-export default BlogIndex
 
 export const pageQuery = graphql`
   query {
@@ -62,14 +57,14 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(filter: {frontmatter: {category: {eq: "recipe"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(filter: {frontmatter: {category: {eq: "recipe"}}}, sort: {order: DESC, fields: frontmatter___date}) {
       edges {
         node {
           fields {
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "D MMM, YYYY")
             title
             featured_image {
               childImageSharp {
