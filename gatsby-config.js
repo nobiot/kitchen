@@ -76,7 +76,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#000000`,
-        display: `recipe`,
+        display: `standalone`,
         icon: `content/assets/icon-120x120.png`
       }
     },
